@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="525">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Background="Black"  />
+        <Border Grid.Row="0" Grid.Column="1" Background="White" />
+        <Border Grid.Row="1" Grid.Column="0" Background="Black"/>
+        <Border Grid.Row="1" Grid.Column="1" Background="Gray"  />
+
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1">
+            <TextBox AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="0"  Padding="20,0,0,0" x:Name="TextArea" Background="White" Cursor="Pen" Foreground="Gray" CaretBrush="White" />
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10,-15,0,0">
+            <Button Margin="10 50 50 5" x:Name="NewBtn" Click="NewBtn_Click" Background="Black" Foreground="White" BorderThickness="0" HorizontalContentAlignment="Left">New</Button>
+            <Button Margin="10 15 50 5" x:Name="OpenBtn" Click="OpenBtn_Click" Background="Black" Foreground="White" BorderThickness="0" HorizontalContentAlignment="Left">Open</Button>
+            <Button Margin="10 15 50 5" x:Name="QuickSaveBtn" Click="QuickSaveBtn_Click" Background="Black" Foreground="White" BorderThickness="0" HorizontalContentAlignment="Left">Save</Button>
+            <Button Margin="10 15 50 5" x:Name="SaveBtn" Click="SaveBtn_Click" Background="Black" Foreground="White" BorderThickness="0" HorizontalContentAlignment="Left">Save as</Button>
+            <StackPanel Orientation="Horizontal" Height="40" Margin="0,0,5,20">
+                <Button Margin=" 10 0 5 0" FontSize="12" Foreground="Gray" Background="Black" BorderThickness="0" x:Name="Front12" Click="Front12_Click" Height="20" VerticalAlignment="Bottom">A</Button>
+                <Button Margin="10 0 5 0" FontSize="18" Foreground="Gray" Background="Black" BorderThickness="0" x:Name="Front18" Click="Front18_Click" Height="24" VerticalAlignment="Bottom">A</Button>
+                <Button Margin="10 0 5 0" FontSize="24" Foreground="Gray" Background="Black" BorderThickness="0" x:Name="Front24" Click="Front24_Click" Height="30" VerticalAlignment="Bottom">A</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10 -30 0 0">
+                <Ellipse Width="25" Height="25" Fill="#FF1F1717"  Stroke="DarkGray" StrokeThickness="3" Margin="00 30 0 0" x:Name="Dark" />
+                <Ellipse Width="25" Height="25" Fill="White" Stroke="Gray"     StrokeThickness="3" Margin="10 30 0 0" x:Name="White" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <TextBlock x:Name="fileTitle" Text="NewFile.txt" VerticalAlignment="Center" FontSize="18" Padding="20,0,0,0" Foreground="Gray" Margin="0,14" Width="292"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Width="102" HorizontalAlignment="Right">
+            <Button Content="—" x:Name="Min" Background="White" FontSize="14" BorderBrush="{x:Null}" Margin="10,0,5,0" Foreground="Gray" VerticalAlignment="Center" Click="Min_Click_1"/>
+            <Button Content="口" x:Name="Max"   Background="White" FontSize="14" HorizontalAlignment="Right" BorderBrush="{x:Null}" Margin="0,0,5,0" Foreground="Gray" VerticalAlignment="Center" Click="Max_Click_1"/>
+            <Button Content="X" x:Name="Close"  Background="White" FontSize="14" HorizontalAlignment="Right" BorderBrush="{x:Null}" Foreground="Gray" VerticalAlignment="Center" Click="Close_Click" />
+        </StackPanel>
+
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="0" Margin="570,0,-83,0" Grid.Row="1" VerticalAlignment="Top" Width="3"/>
+    </Grid>
+</Window>
